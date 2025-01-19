@@ -1,6 +1,6 @@
 import "./App.css";
 import { toast } from "sonner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import Navbar from "@/components/myUi/Navbar";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,7 @@ function App() {
   const [email, setEmail] = useState("");
   const { login } = useUserContext();
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,6 +33,10 @@ function App() {
     login(email);
     navigate("/quiz");
   };
+
+  useEffect(()=>{
+    fetch(`${API_URL}/helloz`)
+  },[]);
 
   return (
     <div className="h-full w-full flex items-center justify-center">
