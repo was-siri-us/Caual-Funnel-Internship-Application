@@ -7,6 +7,8 @@ This is a React-based quiz application where users can take a quiz, navigate thr
 
 The app leverages various modern technologies such as React, Vite, Tailwind CSS, and Sonner for notifications.
 
+Deployment link: https://cf-quiz-app.vercel.app/
+
 ### Key Features:
 - Responsive UI
 - Exam Logic
