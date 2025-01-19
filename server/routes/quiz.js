@@ -10,7 +10,7 @@ router.get("/start-quiz", async (req, res) => {
     );
     const apiData = await apiResponse.json();
     const quizQuestions = apiData.results;
-    console.log(quizQuestions);
+    // console.log(quizQuestions);
 
     const formattedQuizQuestions = quizQuestions.map((question) => {
       const questionId = uuidv4();
@@ -28,7 +28,7 @@ router.get("/start-quiz", async (req, res) => {
       };
     });
 
-    console.log(formattedQuizQuestions)
+    // console.log(formattedQuizQuestions)
     await Question.insertMany(formattedQuizQuestions);
     const responseQuestions = formattedQuizQuestions.map(
       ({ _id, type, difficulty, category, question, options }) => ({
