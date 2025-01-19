@@ -1,5 +1,5 @@
 // src/components/ProtectedRoute.js
-import { useUserContext } from "@/context/userContext";
+import { useUserContext } from "@/context/UserContext";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
