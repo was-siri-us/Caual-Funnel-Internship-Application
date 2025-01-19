@@ -42,6 +42,8 @@ const Quiz = () => {
           };
         });
         setQuiz(mcqs);
+        console.log("EXECUTEING???")
+        console.log(mcqs);
         setIdx(0);
       } catch (err) {
         console.log(err);

@@ -10,7 +10,7 @@ router.get("/start-quiz", async (req, res) => {
     );
     const apiData = await apiResponse.json();
     const quizQuestions = apiData.results;
-    console.log("Fetched Questions from API");
+    console.log(quizQuestions);
 
     const formattedQuizQuestions = quizQuestions.map((question) => {
       const questionId = uuidv4();
@@ -27,6 +27,8 @@ router.get("/start-quiz", async (req, res) => {
         ]),
       };
     });
+
+    console.log(formattedQuizQuestions)
     await Question.insertMany(formattedQuizQuestions);
     const responseQuestions = formattedQuizQuestions.map(
       ({ _id, type, difficulty, category, question, options }) => ({
@@ -40,7 +42,7 @@ router.get("/start-quiz", async (req, res) => {
     );
     res.send(responseQuestions);
   } catch (err) {
-    res.status(500).send("Internal Server Error");
+    res.status(500).send(err);
   }
 });
 
