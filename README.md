@@ -11,8 +11,24 @@ The app leverages various modern technologies such as React, Vite, Tailwind CSS,
 - Responsive UI
 - Exam Logic
 - Exam Timer
-- Evaluation PAge
----
+- Evaluation Page
+### Screenshots
+![image](https://github.com/user-attachments/assets/612175ec-4994-4f2c-a597-353e2919665d)
+![image](https://github.com/user-attachments/assets/90a4e2a2-88ff-45b4-9886-c85a9b8ec748)
+
+
+### Challenges / Solutions
+
+To evaluate user's answers there are two approaches:
+1. Evalutate it in the frontend by passing correct answer along with options - not secure as client gets access to the correct options
+2. Evaluate in backend - hard to implement as questions are being fetched from external api rather than server.
+
+#### Solutions
+There's two ways to solve this
+1. Cryptographic based message signing - sign each question with a securely hashed solution
+2. Store questions fetched in a DB .
+
+While Cryptographic based solution is intuitive, the key must be changed on a regular basis. Settled with storing questions in database
 
 ## Installation Guide
 
